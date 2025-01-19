@@ -1,0 +1,59 @@
+# macOS system files
+.DS_Store
+*.swp
+
+# Build files
+DerivedData/
+build/
+*.xcworkspace/
+*.xcuserdata/
+*.xcodeproj/project.xcworkspace/
+
+# Dependency managers
+Pods/
+Carthage/
+SwiftPM/
+Package.resolved
+
+# CocoaPods generated files
+*.lock
+*.xcconfig
+!.gitkeep
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/*.log
+
+# Xcode specific
+xcdebugger/
+*.hmap
+
+# Logs
+*.log
+*.sym
+*.dSYM
+*.tmp
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# General exclusions
+*.plist
+*.app
+*.ipa
+*.dylib
+*.framework
+*.xcuserstate
+
+# Archives
+*.xcarchive
+
+# Environment
+.env
+
+# Firebase
+GoogleService-Info.plist

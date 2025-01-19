@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		235167502D39640E00720654 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2351674F2D39640E00720654 /* SDWebImage */; };
+		235167522D39640E00720654 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 235167512D39640E00720654 /* SDWebImageMapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		235166BF2D391A7500720654 /* TestTaskMaal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskMaal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235167522D39640E00720654 /* SDWebImageMapKit in Frameworks */,
+				235167502D39640E00720654 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,13 +79,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				2351694F2D3D3DA900720654 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				235166C12D391A7500720654 /* TestTaskMaal */,
 			);
 			name = TestTaskMaal;
-			packageProductDependencies = (
-			);
 			productName = TestTaskMaal;
 			productReference = 235166BF2D391A7500720654 /* TestTaskMaal.app */;
 			productType = "com.apple.product-type.application";
@@ -107,6 +113,10 @@
 			);
 			mainGroup = 235166B62D391A7500720654;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2351674E2D39640E00720654 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				2351694D2D3D3D8900720654 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 235166C02D391A7500720654 /* Products */;
 			projectDirPath = "";
@@ -137,6 +147,13 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2351694F2D3D3DA900720654 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2351694E2D3D3DA900720654 /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		235166D32D391A7700720654 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -145,13 +162,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4W39WWQ6LV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestTaskMaal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -172,13 +190,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4W39WWQ6LV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestTaskMaal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,6 +352,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2351674E2D39640E00720654 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
+		2351694D2D3D3D8900720654 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.58.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2351674F2D39640E00720654 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2351674E2D39640E00720654 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		235167512D39640E00720654 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2351674E2D39640E00720654 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		2351694E2D3D3DA900720654 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2351694D2D3D3D8900720654 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 235166B72D391A7500720654 /* Project object */;
 }
