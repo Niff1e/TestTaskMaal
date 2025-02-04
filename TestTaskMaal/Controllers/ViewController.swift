@@ -35,7 +35,13 @@ class ViewController: UIViewController {
                     self?.models = models
                     self?.tableView.reloadData()
                 case .failure(let error):
-                    print(error.errorDescription ?? "")
+                    let alert = UIAlertController(
+                        title: "Ошибка",
+                        message: error.localizedDescription,
+                        preferredStyle: .alert
+                    )
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(alert, animated: true)
                 }
             }
         }
