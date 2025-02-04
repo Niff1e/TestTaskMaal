@@ -14,10 +14,27 @@ class APICaller {
         static let baseURL = "https://junior.balinasoft.com"
     }
 
-    enum APIError: Error {
+    enum APIError: Error, LocalizedError {
         case invalidURL
         case failedToGetData
         case failedEncodingJSON
+        case badGateway
+        case inpredictableError
+
+        var errorDescription: String? {
+            switch self {
+            case .invalidURL:
+                return "Некорректный URL. Проверьте адрес."
+            case .failedToGetData:
+                return "Не удалось получить данные. Проверьте соединение с интернетом."
+            case .failedEncodingJSON:
+                return "Ошибка кодирования JSON. Проверьте данные."
+            case .badGateway:
+                return "Ошибка 502. Сервер временно недоступен. Попробуйте позже."
+            case .inpredictableError:
+                return "Непредвиденная ошибка. Попробуйте позже."
+            }
+        }
     }
 
     // MARK: - Variable of State of Download
@@ -28,15 +45,20 @@ class APICaller {
 
     // MARK: - Swagger calls
 
-    func getPhotoTypes(completion: @escaping (Result<[PhotoTypeContent], Error>) -> Void) {
+    func getPhotoTypes(completion: @escaping (Result<[PhotoTypeContent], APIError>) -> Void) {
         guard let url = URL(string: Constants.baseURL + "/api/v2/photo/type") else {
             completion(.failure(APIError.invalidURL))
             return
         }
 
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, statusCode, error in
             guard let data, error == nil else {
                 completion(.failure(APIError.failedToGetData))
+                return
+            }
+
+            if let code = statusCode as? HTTPURLResponse, code.statusCode == 502 {
+                completion(.failure(APIError.badGateway))
                 return
             }
 
@@ -46,7 +68,7 @@ class APICaller {
                 self?.totalPages = result.totalPages
                 completion(.success(result.content))
             } catch {
-                completion(.failure(error))
+                completion(.failure(APIError.inpredictableError))
             }
         }
         task.resume()

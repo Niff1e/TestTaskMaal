@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                     self?.models = models
                     self?.tableView.reloadData()
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    print(error.errorDescription ?? "")
                 }
             }
         }
